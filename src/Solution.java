@@ -15,11 +15,13 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        for (String key : map.keySet()) {
-            System.out.print(key + ": " + map.get(key));
-            if (!key.equals(map.lastKey())) {
-                System.out.print("\n");
+        boolean first = true;
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (!first) {
+                System.out.print(" ");
             }
+            System.out.print(entry.getKey() + ": " + entry.getValue());
+            first = false;
         }
 
         scanner.close();
