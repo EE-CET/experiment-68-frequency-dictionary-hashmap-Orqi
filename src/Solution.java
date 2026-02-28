@@ -1,6 +1,6 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class Solution {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class Solution {
         String text = scanner.nextLine();
         String[] words = text.split(" ");
 
-        HashMap<String, Integer> map = new HashMap<>();
+        TreeMap<String, Integer> map = new TreeMap<>();
 
         for (String word : words) {
             map.put(word, map.getOrDefault(word, 0) + 1);
