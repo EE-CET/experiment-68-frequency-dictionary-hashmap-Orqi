@@ -6,8 +6,8 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String text = scanner.nextLine();
-        String[] words = text.split(" ");
+        String text = scanner.nextLine().trim();
+        String[] words = text.split("\\s+");
 
         TreeMap<String, Integer> map = new TreeMap<>();
 
@@ -15,8 +15,11 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        for (String key : map.keySet()) {
+            System.out.print(key + ": " + map.get(key));
+            if (!key.equals(map.lastKey())) {
+                System.out.print("\n");
+            }
         }
 
         scanner.close();
